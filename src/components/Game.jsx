@@ -99,9 +99,16 @@ function Game() {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <h2 className="text-center">Level: {level - 1}</h2>{" "}
-      <h2 className="text-center">Score: {correctClicks}</h2>{" "}
-      <h2>{gameMessage}</h2>
+      <h1 className="text-4xl font-bold mt-10 mb-10 text-center">
+        Pokemon Memory Game
+      </h1>
+      {level <= 5 && (
+        <>
+          <h2 className="text-center text-lg">Level: {level - 1}</h2>{" "}
+          <h3 className="text-center text-lg">Score: {correctClicks}</h3>{" "}
+          <h4 className="text-center text-lg">{gameMessage}</h4>
+        </>
+      )}
       {level > 6 ? ( // check if level is greater than 6 (12 items)
         <div className="text-center">
           <Confetti />
